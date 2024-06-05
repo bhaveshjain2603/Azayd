@@ -1,27 +1,19 @@
 <div align="center">
-  
-  ![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/adex)
-  ![GitHub stars](https://img.shields.io/github/stars/codewithsadee/adex?style=social)
-  ![GitHub forks](https://img.shields.io/github/forks/codewithsadee/adex?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
-  [![YouTube Video Views](https://img.shields.io/youtube/views/5Bl3CCizSRQ?style=social)](https://youtu.be/5Bl3CCizSRQ)
+
 
   <br />
   <br />
 
-  <h2 align="center">Adex - Business Agency Website</h2>
+  <h2 align="center">Azayd - IT Consultancy Website</h2>
 
-  Adex is a fully responsive business agency website, <br />Responsive for all devices, build using HTML, CSS, and JavaScript.
+  Azayd is a fully responsive business agency website, <br />Responsive for all devices, built using HTML, CSS, and JavaScript.
 
-  <a href="https://codewithsadee.github.io/adex/"><strong>➥ Live Demo</strong></a>
+  <a href="#"><strong>➥ Live Demo</strong></a>
 
 </div>
 
 <br />
 
-### Demo Screeshots
-
-![Adex Desktop Demo](./readme-images/desktop.png "Desktop Demo")
 
 ### Prerequisites
 
@@ -31,24 +23,21 @@ Before you begin, ensure you have met the following requirements:
 
 ### Run Locally
 
-To run **Adex** locally, run this command on your git bash:
+To run **Azayd** locally, run this command on your git bash:
 
 Linux and macOS:
 
 ```bash
-sudo git clone https://github.com/codewithsadee/adex.git
+sudo git clone https://github.com/bhaveshjain2603/Azayd.git
 ```
 
 Windows:
 
 ```bash
-git clone https://github.com/codewithsadee/adex.git
+git clone https://github.com/bhaveshjain2603/Azayd.git
 ```
 
 ### Contact
 
-If you want to contact with me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
+You can reach me at [Linkedin](https://www.linkedin.com/in/bhavesh-s-jain-56a56a243/).
 
-### License
-
-[MIT](https://choosealicense.com/licenses/mit/)

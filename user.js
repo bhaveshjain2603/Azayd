@@ -5,7 +5,7 @@ const app = express();
 
 app.use(express.static("public"));
 app.get("/", function(req, res){
-    res.sendFile("index.html", { root: "public" });
+    res.sendFile("index.html", { root: "public/html" });
 });
 
 app.listen(3030, () => {

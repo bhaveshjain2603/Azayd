@@ -706,11 +706,11 @@ body.nav-active { overflow: hidden; }
 
   .grid-list { grid-template-columns: 1fr 1fr; }
 
-  .header .btn {
+  /* .header .btn {
     display: block;
     margin-inline-start: auto;
     padding: 8px 20px;
-  }
+  } */
 
   .header.active .btn {
     background-color: var(--violet-blue-crayola);
@@ -785,7 +785,10 @@ body.nav-active { overflow: hidden; }
     color: var(--violet-blue-crayola);
   }
 
-  .header .btn { margin-inline-start: 0; }
+  .header .btn {
+    display: block;
+    padding: 8px 20px;
+  }
 
   .hero {
     padding-block-start: calc(var(--section-padding) + 15px);

@@ -165,3 +165,9 @@ form a:hover{
     display: flex;
     justify-content: center;
 }
+
+@media (max-width: 768px){
+    .wrapper{
+        max-width: 350px;
+    }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Trial - Azayd</title>
+    <link rel="stylesheet" href="freeTrial.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo h2 section-title">Azayd</a>
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li><a href="index.html#home" class="navbar-link">Home</a></li>
+                    <li><a href="index.html#about" class="navbar-link">About</a></li>
+                    <li><a href="index.html#services" class="navbar-link">Services</a></li>
+                    <li><a href="index.html#contact" class="navbar-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="section-title">Explore Our Services with a Free Trial</h1>
+                <p>Experience the benefits of our innovative IT solutions with a no-obligation free trial.</p>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <div class="grid-list">
+                    <div class="service-item">
+                        <h3 class="service-title">Service 1</h3>
+                        <p class="service-description">Description of Service 1. Highlight key features and benefits.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3 class="service-title">Service 2</h3>
+                        <p class="service-description">Description of Service 2. Highlight key features and benefits.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3 class="service-title">Service 3</h3>
+                        <p class="service-description">Description of Service 3. Highlight key features and benefits.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="free-trial-section">
+            <div class="container">
+                <h2 class="section-title">Register for a Free Trial</h2>
+                <form id="freeTrialForm" class="free-trial-form" action="/free-trial" method="post">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="registerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="registerEemail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone" name="registerPhone" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Azayd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('freeTrialForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            fetch('/register-free-trial', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Thank you for registering for the free trial!');
+                    window.location.href = 'index.html';
+                } else {
+                    alert('Registration failed. Please try again.');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

@@ -6,7 +6,7 @@
 
   <h2 align="center">Azayd - IT Consultancy Website</h2>
 
-  Azayd is a fully responsive business agency website, <br />Responsive for all devices, built using HTML, CSS, and JavaScript.
+  Azayd is a fully responsive IT Consultancy Website, <br />Responsive for all devices, built using HTML, CSS, and JavaScript.
 
   <a href="#"><strong>➥ Live Demo</strong></a>
 

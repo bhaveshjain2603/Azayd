@@ -20,6 +20,40 @@ const toggleNavbar = function () {
 
 addEventOnElements(navTogglers, "click", toggleNavbar);
 
+document.addEventListener('DOMContentLoaded', () => {
+  if (sessionStorage.getItem('loggedIn') === 'true') {
+    document.getElementById('loginLink').style.display = 'none';
+    document.getElementById('logoutLink').style.display = 'block';
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const loginLink = document.getElementById('loginLink');
+  const logoutLink = document.getElementById('logoutLink');
+
+  if (sessionStorage.getItem('loggedIn') === 'true') {
+    loginLink.style.display = 'none';
+    logoutLink.style.display = 'block';
+  }
+
+  logoutLink.addEventListener('click', () => {
+    fetch('/logout-customer', {
+      method: 'POST',
+      credentials: 'include' // Ensure cookies are included in the request
+    })
+    .then(response => {
+      if (response.ok) {
+        sessionStorage.removeItem('loggedIn');
+        loginLink.style.display = 'block';
+        logoutLink.style.display = 'none';
+        window.location.href = 'index.html'; // Redirect to the main page
+      } else {
+        alert('Logout failed. Please try again.');
+      }
+    })
+    .catch(error => console.error('Error:', error));
+  });
+});
 
 // ACTIVE HEADER WHEN WINDOW SCROLL DOWN TO 100PX
 const header = document.querySelector("[data-header]");
@@ -31,7 +65,6 @@ window.addEventListener("scroll", function () {
     header.classList.remove("active");
   }
 });
-
 
 
 // SLIDER

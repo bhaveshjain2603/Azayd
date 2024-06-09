@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     emailInput.addEventListener('input', validateSignupForm);
     passwordInput.addEventListener('input', validateSignupForm);
     phoneNumber.addEventListener('input', validateSignupForm);
-    customerCheck.addEventListener('change', validateSignupForm);
 });
 
 const wrapper = document.querySelector(".wrapper");
@@ -36,3 +35,24 @@ loginHeader.addEventListener('click', ()=>{
 signupHeader.addEventListener('click', ()=>{
     wrapper.classList.remove("active");
 })
+
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+
+    fetch('/login-customer', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        sessionStorage.setItem('loggedIn', 'true');
+        window.location.href = 'index.html';
+      } else {
+        alert('Login failed. Please try again.');
+      }
+    })
+    .catch(error => console.error('Error:', error));
+});

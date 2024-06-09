@@ -719,12 +719,12 @@ body.nav-active { overflow: hidden; }
   }
 
   .about .container {
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr 0.7fr;
     align-items: center;
   }
 
   .feature .container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 0.7fr;
     align-items: center;
   }
 
@@ -741,9 +741,44 @@ body.nav-active { overflow: hidden; }
     color: white;
     margin: 3rem;
   }
+
+  .btn-outline:hover{
+    background-color: transparent;
+  }
+
+  .wrapper #logoutLink{
+    display: none;
+    color: white;
+    margin: 3rem 5.5rem;
+  }
+  
+  .about .container {
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+  .feature .container {
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
 }
 
 @media (min-width: 992px) {
+
+  .container .btn{
+    display: block;
+    color: white;
+  }
+  .container .btn-primary{
+    display: block;
+    color: black;
+  }
+  .container .btn-outline:hover {
+    color: black;
+  }
+  .container #logoutLink{
+    display: none;
+    color: white;
+  }
 
   .container { max-width: 960px; }
 
@@ -759,7 +794,7 @@ body.nav-active { overflow: hidden; }
   .navbar.active {
     all: unset;
     display: block;
-    margin-inline: auto 24px;
+    margin-inline: auto;
   }
 
   .navbar-list {
@@ -784,7 +819,7 @@ body.nav-active { overflow: hidden; }
 
   .header .btn {
     display: block;
-    padding: 8px 20px;
+    padding: 8px 12px;
   }
 
   .header.active .btn {
@@ -835,6 +870,10 @@ body.nav-active { overflow: hidden; }
 }
 
 @media (min-width: 1200px) {
+
+  .header .btn{
+    padding: 8px 28px;
+  }
 
   .container { max-width: 1140px; }
 

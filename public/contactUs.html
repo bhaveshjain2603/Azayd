@@ -37,22 +37,24 @@
                 <p>We would love to respond to your queries and help you succeed. Feel free to get in touch with us.</p>
                 <form action="/connect" method="post">
                     <div class="input-box">
-                        <input type="text" placeholder="Enter your name" required>
+                        <input type="text" name="userName" placeholder="Enter your name" required>
                     </div>
                     <div class="input-box">
-                        <input type="email" placeholder="Enter your email" required>
+                        <input type="email" name="userEmail" placeholder="Enter your email" required>
                     </div>
                     <div class="input-box message-box">
-                        <textarea></textarea>
+                        <textarea name="userText"></textarea>
                     </div>
-                    <div class="button">
+                    <!-- <div class="button">
                         <input type="button" value="Send now">
-                    </div>
+                    </div> -->
+                    <button type="submit">Submit</button>
+
                 </form>
             </div>
         </div>
     </div>
 
-    <script src="contactUs.css"></script>
+    <script src="contactUs.js"></script>
 </body>
 </html>

@@ -739,7 +739,7 @@ body.nav-active { overflow: hidden; }
   .wrapper .btn{
     display: block;
     color: white;
-    margin: 3rem;
+    margin: 3rem 0;
   }
 
   .btn-outline:hover{

@@ -66,6 +66,9 @@ body {
     font-size: 1rem;
 }
 
+body.nav-active { overflow: hidden; }
+
+
 li { list-style: none; }
 
 .h1,
@@ -92,6 +95,14 @@ li { list-style: none; }
     display: grid;
     text-align: left;
     gap: 25px;
+}
+
+button{
+    display: block;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font: inherit;
 }
 
 address{
@@ -121,6 +132,34 @@ a{
     text-align: center;
 }
 
+.btn {
+    color: var(--white);
+    /* font-size: var(--fs-6); */
+    font-weight: var(--fw-700);
+    border: 2px solid var(--white);
+    max-width: max-content;
+    padding: 12px 28px;
+    border-radius: var(--radius-pill);
+    transition: var(--transition-1);
+    will-change: transform;
+}
+  
+.btn:is(:hover, :focus-visible) { transform: translateY(-4px); }
+  
+.btn-primary,
+.btn-outline:is(:hover, :focus-visible) {
+  background-color: var(--white);
+  color: var(--charcoal);
+}
+
+.btn-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
 /* Container */
 .container {
     padding: 20px 0;
@@ -143,6 +182,27 @@ a{
     z-index: 4;
 }
 
+.header.active {
+    background-color: var(--white);
+    position: fixed;
+    animation: slideIn 0.5s ease forwards;
+}
+  
+@keyframes slideIn {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0); }
+}
+
+.header.active .container .logo{
+    color: var(--charcoal);
+}
+  
+.header.active .navbar-top .logo{
+  color: var(--white);
+}
+
+.header.active .nav-open-btn { color: var(--charcoal); }
+
 .header .container{
     display: flex;
     align-items: center;
@@ -160,9 +220,28 @@ a{
 
 /* Navbar */
 .navbar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    background-color: var(--raisin-black);
+    color: var(--white);
+    max-width: 300px;
+    width: 100%;
+    height: 100vh;
+    padding: 30px;
+    padding-block-end: 40px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    z-index: 2;
+    visibility: hidden;
+    transition: var(--transition-3);
+}
+  
+
+.navbar.active {
+    visibility: visible;
+    transform: translateX(300px);
 }
 
 .navbar-top {
@@ -172,9 +251,10 @@ a{
 }
 
 .nav-close-btn {
+  display: flex;
   background-color: var(--white_a8);
   color: var(--white);
-  font-size: 2rem;
+  font-size: 1.2rem;
   padding: 6px;
   border-radius: var(--radius-circle);
   transition: var(--transition-1);
@@ -191,7 +271,10 @@ a{
   padding-block: 6px;
 }
 
-.contact-link { transition: var(--transition-1); }
+.contact-link { 
+    transition: var(--transition-1); 
+    font-size: 1.1rem;
+}
 
 .contact-link:is(:hover, :focus-visible) { color: var(--violet-blue-crayola); }
 
@@ -218,8 +301,9 @@ a{
 }
 
 .nav-open-btn{
-    display: none;
+    display: block;
     font-size: 2rem;
+    color: white;
 }
 
 .overlay {
@@ -465,7 +549,6 @@ a{
 @media (max-width: 768px) {
     .container{
         max-width: 650px;
-        /* justify-self: center; */
     }
     .header .container {
         padding: 10px 30px;
@@ -484,13 +567,9 @@ a{
         margin-inline: 0;
     }
 
-    .navbar {
-        display: none;
-    }
-
     .navbar-list {
         flex-direction: column;
-        text-align: center;
+        line-height: 3;
     }
 
     .navbar-link {
@@ -499,6 +578,7 @@ a{
 
     .nav-open-btn{
         display: block;
+        color: white;
     }
 
     .service .grid-list { 
@@ -533,10 +613,52 @@ a{
     }
 }
 
+@media (max-width: 992px) {
+
+    .navbar .navbar.active{
+        all: unset;
+        display: block;
+        margin-inline: auto;
+    }
+    .navbar-list {
+        flex-direction: column;
+        line-height: 3;
+    }
+    .wrapper .btn{
+        display: block;
+        color: white;
+        margin: 2rem  0;
+    }
+
+    .wrapper .btn:hover{
+        background: none;
+    }
+
+    .wrapper #logoutLink{
+        display: none;
+    }
+}
+
 @media(min-width: 992px) {
     .container{
         max-width: 960px;
         justify-self: center;
+    }
+
+    .nav-open-btn,
+    .navbar > *:not(.navbar-list),
+    .overlay { display: none; }
+
+    .navbar,
+    .navbar.active {
+        all: unset;
+        display: block;
+    }
+
+    .navbar-list{ margin-block-end: 0;}
+
+    .nav-open-btn{
+        display: none;
     }
 
     .hero {

@@ -744,6 +744,7 @@ body.nav-active { overflow: hidden; }
 
   .btn-outline:hover{
     background-color: transparent;
+    color: white;
   }
 
   .wrapper #logoutLink{
@@ -763,11 +764,6 @@ body.nav-active { overflow: hidden; }
 }
 
 @media (min-width: 992px) {
-
-  .container .btn{
-    display: block;
-    color: white;
-  }
   .container .btn-primary{
     display: block;
     color: black;
@@ -850,6 +846,10 @@ body.nav-active { overflow: hidden; }
   .project .section-title {
     max-width: 32ch;
     margin-inline: auto;
+  }
+
+  .cta .btn-primary{
+    color: white;
   }
 
   .cta .container {

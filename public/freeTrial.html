@@ -9,10 +9,10 @@
 </head>
 <body>
 
-  <header class="header">
+  <header class="header" data-header>
       <div class="container">
           <a href="index.html" class="logo h2 section-title">Azayd</a>
-          <nav class="navbar">
+          <nav class="navbar" data-navbar>
             <div class="navbar-top">
               <a href="#" class="logo h2 section-title">Welcome</a>
     
@@ -27,16 +27,38 @@
                 <li><a href="#free-trial" class="navbar-link">Free Trial</a></li>
             </ul>
             <div class="wrapper">
-              <a href="freeTrial.html" class="btn btn-outline">Free Trial</a>
+              <a href="index.html" class="btn btn-outline">Home</a>
               <a href="customerLoginPage.html" class="btn btn-outline" id="loginLink">Login/Signup</a>
               <a href="#" class="btn btn-outline" id="logoutLink">Logout</a>
               <a href="mailto:info@email.com" class="contact-link">contact.azayd@gmail.com</a>
               <a href="tel:001234567890" class="contact-link">+91 98765 43210</a>
             </div>
+            <ul class="social-list">
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-youtube"></ion-icon>
+                </a>
+              </li>
+            </ul>
           </nav>
-          <div class="nav-open-btn">
+          <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
             <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-          </div>
+          </button>
           <div class="overlay" data-nav-toggler data-overlay></div>
       </div>
   </header>
@@ -301,26 +323,10 @@
       </div>
   </footer>
 
-  <script>
-      document.getElementById('freeTrialForm').addEventListener('submit', function(event) {
-          event.preventDefault();
-          const formData = new FormData(this);
-          fetch('/register-free-trial', {
-              method: 'POST',
-              body: formData
-          })
-          .then(response => response.json())
-          .then(data => {
-              if (data.success) {
-                  alert('Thank you for registering for the free trial!');
-                  window.location.href = 'index.html';
-              } else {
-                  alert('Registration failed. Please try again.');
-              }
-          })
-          .catch(error => console.error('Error:', error));
-      });
-  </script>
+  <!-- CUSTOM JS LINK -->
+  <script src="freeTrial.js"></script>
+
+  <!-- IONICON -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 

@@ -2,12 +2,15 @@ const con = require("./connection");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+const cors = require("cors")
 
-//to send specific file to client
+// Enable CORS for all routes
+app.use(cors())
+//To send specific file to client
 app.use(express.static("public"));
-//user entered data should be encoded;
+//User entered data should be encoded;
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
+//App.use(bodyParser.json());
 
 app.get("/", function(req, res){
     res.sendFile("index.html", { root: "public" });

@@ -197,3 +197,9 @@ button:hover{
         margin-left: 0;
     }
 }
+
+@media (max-width: 575px) {
+    .content .right-side .topic-text::after{
+        display: none;
+    }
+}

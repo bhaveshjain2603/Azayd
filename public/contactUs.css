@@ -99,23 +99,6 @@ body{
     position: relative;
 }
 
-.content .right-side .topic-text::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 50%;
-    background: rgb(255, 255, 255);
-    border-left: 2px solid white;
-    animation: typing 2.5s steps(25) infinite;
-}
-
-@keyframes typing{
-    100%{
-        left: 45%;
-    }
-}
-
 .right-side .input-box{
     height: 50px;
     width: 100%;
@@ -195,11 +178,5 @@ button:hover{
     .container .content .right-side{
         width: 100%;
         margin-left: 0;
-    }
-}
-
-@media (max-width: 575px) {
-    .content .right-side .topic-text::after{
-        display: none;
     }
 }

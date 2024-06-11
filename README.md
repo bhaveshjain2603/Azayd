@@ -8,7 +8,7 @@
 
   Azayd is a fully responsive IT Consultancy Website, <br />Responsive for all devices, built using HTML, CSS, and JavaScript.
 
-  <a href="azayd-it-consultancy.vercel.app"><strong>➥ Live Demo</strong></a>
+  <a href="www.azayd-it-consultancy.vercel.app"><strong>➥ Live Demo</strong></a>
 
 </div>
 

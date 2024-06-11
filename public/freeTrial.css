@@ -614,7 +614,6 @@ a{
 }
 
 @media (max-width: 992px) {
-
     .navbar .navbar.active{
         all: unset;
         display: block;
@@ -643,6 +642,10 @@ a{
     .container{
         max-width: 960px;
         justify-self: center;
+    }
+
+    .header.active .navbar-list a{
+        color: var(--charcoal);
     }
 
     .nav-open-btn,
